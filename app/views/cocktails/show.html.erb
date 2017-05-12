@@ -1,5 +1,7 @@
-<h1><%= @cocktail.name %></h1>
+<h1>😜 <%= @cocktail.name %></h1>
 
+<br>
+<br>
 
 <ul>
   <% @cocktail.doses.each do |dose| %>
@@ -11,3 +13,8 @@
   <% end %>
 </ul>
 <%= render "doses/form" %>
+
+<br>
+<br>
+
+<%= link_to "Retour aux cocktails", cocktails_path, class: "btn btn-primary" %>
