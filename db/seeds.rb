@@ -9,13 +9,14 @@
 require "open-uri"
 require "json"
 
+Dose.destroy_all
 Ingredient.destroy_all
 
 url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 
-json_string = open(url).reload
+json_string = open(url).read
 
-ingredients_date = JSON.parse(json_string)['drinks']
+ingredients_data = JSON.parse(json_string)['drinks']
 
 print "Creating ingredients)"
 ingredients_data.each do |ingredient_data|
